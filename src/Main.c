@@ -18,10 +18,10 @@ TransformedView tv;
 Vector Objects;
 float Area = 100000.0f;
 
-void Ship_Update(Ship* s,float w->ElapsedTime){
-	s->v = Vec2_Add(s->v,Vec2_Mulf(s->ac,w->ElapsedTime));
+void Ship_Update(Ship* s,float ElapsedTime){
+	s->v = Vec2_Add(s->v,Vec2_Mulf(s->ac,ElapsedTime));
 	if(Vec2_Mag(s->v)>10000.0f) s->v = Vec2_Mulf(Vec2_Norm(s->v),10000.0f);
-	s->p = Vec2_Add(s->p,Vec2_Mulf(s->v,w->ElapsedTime));
+	s->p = Vec2_Add(s->p,Vec2_Mulf(s->v,ElapsedTime));
 }
 void Ship_Render(Ship* s){
 	Vec2 p1 = {         0.0f,-s->r * 0.66f };
