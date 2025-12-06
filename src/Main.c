@@ -128,7 +128,8 @@ void Planet_Free(Planet* p){
 void Setup(AlxWindow* w){
 	Me = (Ship){ Area * 0.5f,Area * 0.5f,0.0f,0.0f,0.0f,0.0f,10.0f,0.0f };
 	tv = TransformedView_New((Vec2){ GetWidth(),GetHeight() });
-	TransformedView_Focus(&tv,&Me.p);
+	TransformedView_Focus(&tv,&Me.p,(Vec2){ 0.0f,0.0f });
+	TransformedView_Zoom(&tv,(Vec2){ 0.01f,0.01f });
 
     Objects = Vector_New(sizeof(Planet));
 
